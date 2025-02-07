@@ -2,17 +2,18 @@
     // Create an associative array of student grades
     $studentGrades = array(
         "John" => 85,
-        "Sarah" => 92,
+        "Sarah" => 92, 
         "Michael" => 78,
-        "Emma" => 95
+        "Emma" => 95,
+        "David" => 88  // Added another student
     );
 
     // Alternative syntax using square brackets
     $carDetails = [
-        "make" => "Toyota",
-        "model" => "Camry", 
-        "year" => 2022,
-        "color" => "Silver"
+        "make" => "Honda",  // Changed to Honda
+        "model" => "Civic", // Changed to Civic
+        "year" => 2023,    // Updated year
+        "color" => "Blue"  // Changed color
     ];
 
     // Display the arrays
@@ -73,7 +74,7 @@
     // Counting and Sum
     echo "<h3>Array Statistics:</h3>";
     echo "Number of students: " . count($studentGrades) . "<br>";
-    echo "Average grade: " . (array_sum($studentGrades) / count($studentGrades)) . "<br>";
+    echo "Average grade: " . number_format((array_sum($studentGrades) / count($studentGrades)), 2) . "<br>";  // Added number formatting
 
     // Merging arrays
     $moreStudents = ["David" => 91, "Alice" => 87];
@@ -86,5 +87,6 @@
     // Search in array
     echo "<h3>Search in Array:</h3>";
     $searchGrade = 95;
-    echo "Student with grade $searchGrade: " . array_search($searchGrade, $studentGrades) . "<br>";
+    $student = array_search($searchGrade, $studentGrades);
+    echo "Student with grade $searchGrade: " . ($student ? $student : "Not found") . "<br>";  // Added null check
 ?>
